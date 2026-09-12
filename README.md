@@ -22,7 +22,7 @@
 |---|---|---|
 | **[assembly-cobot](https://github.com/mi1nn/assembly-cobot)** | F/T 센서 힘제어 기반 태양광 구조물 자동 조립 시스템. 야외 환경의 조명 변화·분진 때문에 비전을 쓸 수 없다는 제약에서 출발해, 3단계 힘제어 핀 삽입(1차 삽입 → 재파지 → 최종 삽입)으로 공차를 흡수하는 방식을 설계했습니다. MES 대시보드부터 로봇 제어 노드까지 전체 스택을 구현했습니다. | ROS2 · Doosan M0609 · Force Control · Flask · PostgreSQL |
 | **[Project2-ROS2-VLA](https://github.com/mi1nn/Project2-ROS2-VLA)** | 음성 명령으로 동작하는 키트 조립 로봇. STT로 받은 자연어 명령을 키워드 추출·검증을 거쳐 로봇 작업 단위로 변환하고, RealSense 기반 객체 인식과 6D pose 추정으로 파지 위치를 결정합니다. | ROS2 · MoveIt · YOLO · Whisper · RealSense |
-| **[mission_app](https://github.com/mi1nn/mission_app)** | 6축 로봇 모션 플래닝 실습 프로젝트. Move J/Move L 구분, pick-and-place 시퀀싱, `MultiThreadedExecutor`와 콜백 그룹 분리를 통한 데드락 회피 패턴을 다뤘습니다. | ROS2 · MoveIt2 · ros2_control |
+
 
 <!-- mission_app이 private이면 이 행은 지우세요. 데모 영상이 있으면 각 설명 끝에 링크를 추가하면 효과가 큽니다. -->
 
