@@ -1,8 +1,6 @@
 # Min (@mi1nn)
 
-**기계공학으로 하드웨어를 배우고, 현장에서 장비를 운영했고, 지금은 ROS2로 로봇을 움직입니다.**
-
-<!-- 위 한 줄은 프로필의 첫인상입니다. 마음에 안 들면 본인 말투로 바꾸세요. -->
+**기계공학으로 하드웨어를 배우고, 현장에서 AI 서버 장비를 설치 및 운영했고, 지금은 ROS2로 로봇을 움직입니다.**
 
 ---
 
@@ -13,7 +11,7 @@
 현재 두산로보틱스 **ROKEY AI 부트캠프**에서 ROS2 기반 협동로봇 시스템을 개발하고 있습니다. 힘제어, 비전, 음성 인터페이스를 실제 로봇에 붙여보는 팀 프로젝트를 진행 중입니다.
 
 - 🤖 관심 분야: 협동로봇 제어, Force/Torque 기반 정밀 조립, 로봇 비전 및 6D pose 추정
-- 🛠 지금 공부하는 것: ROS2 C++, MoveIt2 모션 플래닝, 쿼터니언 기반 pose 처리
+- 🛠 지금 공부하는 것: ROS2, MoveIt2 모션 플래닝, 쿼터니언 기반 pose 처리, RGB-D 카메라 영상 처리 및 YOLO 26s-seg 객체 탐지
 - 📍 인천 근교 · 한국
 
 ---
@@ -32,13 +30,11 @@
 
 ## Tech Stack
 
-**Robotics** ROS2 (Humble) · MoveIt2 · tf2 · Doosan Robotics API · ros2_control
+**Robotics** ROS2 (Jazzy) · tf2 · Doosan Robotics API · ros2_control · OnRobot Gripper
 **AI / Vision** YOLO · OpenCV · Intel RealSense · Whisper (STT) · PyTorch
-**Backend** Python · Flask · PostgreSQL · SQLAlchemy · Docker
+**Backend** Python · PostgreSQL · Docker
 **Engineering** CATIA · ANSYS (모달해석) · Six Sigma GB/BB · ISO 9001 / IATF 16949
 **Tools** Git · Linux (Ubuntu) · Bash
-
-<!-- ROS2 배포판 버전, PyTorch/OpenCV 등 실제로 쓴 것만 남기고 나머지는 지우세요. 안 써본 걸 넣으면 면접에서 반드시 물어봅니다. -->
 
 ---
 
@@ -54,7 +50,5 @@
 
 ## Contact
 
-<!-- 아래는 본인 정보로 채우세요. 이력서 링크로 제출하는 프로필이면 연락처는 있는 게 좋습니다. -->
-
-- 📧 your.email@example.com
+- 📧 alekdi8gm30@gmail.com
 - 📄 [이력서 / 포트폴리오](#)
