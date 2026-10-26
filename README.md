@@ -8,7 +8,7 @@
 
 기계공학 학부에서 구조·진동 해석을 다루며 하드웨어를 이해했고, AI 헬스케어 스타트업에서 필드 엔지니어로 일하며 "실제 AI 서비스 운영 현장과 어떤 "를 배웠습니다. 솔루션을 병원에 직접 설치하고 서버를 운영하면서, 제가 하고 싶은 일이 완성된 제품을 지원하는 쪽이 아니라 **하드웨어와 소프트웨어가 만나는 지점을 직접 설계하는 쪽**이라는 걸 알게 됐습니다. 그래서 로보틱스로 방향을 옮겼습니다.
 
-현재 두산로보틱스 **ROKEY AI 부트캠프**에서 ROS2 기반 로봇 시스템을 개발하고 있습니다. 실제 협동로봇에 힘제어·비전·음성 인터페이스를 붙이는 프로젝트와, Isaac Sim에서 우주 로봇 임무를 시뮬레이션하는 프로젝트를 팀으로 진행했습니다.
+두산로보틱스 **ROKEY AI 부트캠프**에서 ROS2 기반 로봇 시스템을 개발했습니다. 실제 협동로봇에 힘제어·비전·음성 인터페이스를 붙이는 프로젝트, 웹캠과 AMR이 협업해 움직이는 대상을 추적하는 프로젝트, Isaac Sim에서 우주 로봇 임무를 시뮬레이션하는 프로젝트를 팀으로 진행했습니다.
 
 - 🤖 관심 분야: 협동로봇 제어, Force/Torque 기반 정밀 조립, 로봇 비전 및 6D pose 추정, 시뮬레이션 기반 로봇 검증
 - 🛠 지금 공부하는 것: ROS2, C++, MoveIt2 모션 플래닝, Position Estimation, RGB-D 카메라 영상 처리 및 YOLO 객체 탐지
@@ -21,6 +21,7 @@
 | 프로젝트 | 설명 | 핵심 기술 |
 |---|---|---|
 | **[satellite-mission-extension-system](https://github.com/mi1nn/satellite-mission-extension-system)** | Isaac Sim 기반 궤도 서비싱 임무 시뮬레이션. 서비스 위성의 7자유도 로봇팔이 표류하는 수명연장 모듈(MEP)을 포획해 이동 중인 위성에 도킹·분리합니다. 손목 카메라 AprilTag로 포획점 pose를 추정·예측해 DLS IK로 추종하고, Astrobee의 RGB-D 포인트 클라우드로 도킹 통로 장애물을 판정해 위험 시 삽입 전에 중단하는 안전 게이트를 두었습니다. 임무 상태는 ROS 2로 실시간 대시보드에 표시하고 Firestore에 기록해 영상과 동기화된 검증이 가능합니다. | Isaac Sim · Isaac Lab · ROS2 · AprilTag · Point Cloud · FastAPI · Firestore |
+| **[overwatch-amr](https://github.com/mi1nn/overwatch-amr)** | 고정 웹캠과 TurtleBot4가 협업해 움직이는 RC카를 찾아 따라가는 추적 AMR. 웹캠 PC가 YOLO로 RC카를 탐지하고 호모그래피로 map 좌표를 계산해 보내면, 로봇이 Nav2로 접근한 뒤 OAK-D의 bbox 방향과 depth 거리로 위치를 다시 계산해 장애물을 피하며 추적합니다. 접근 → 추적 → 탐색(놓치면 360° 회전) 상태 머신으로 대상을 잃어도 다시 찾으며, YOLOv8·11·26 6개 모델을 같은 조건에서 비교해 YOLO26n(mAP50-95 0.977, 3.2 ms/img)을 선정했습니다. | ROS2 · Nav2 · AMCL · TurtleBot4 · OAK-D · YOLO26 · Homography |
 | **[assembly-cobot](https://github.com/mi1nn/assembly-cobot)** | F/T 센서 힘제어 기반 태양광 구조물 자동 조립 시스템. 야외 환경의 조명 변화·분진 때문에 비전을 쓸 수 없다는 제약에서 출발해, 3단계 힘제어 핀 삽입(1차 삽입 → 재파지 → 최종 삽입)으로 공차를 흡수하는 방식을 설계했습니다. MES 대시보드부터 로봇 제어 노드까지 전체 스택을 구현했습니다. | ROS2 · Doosan M0609 · Force Control · Flask · PostgreSQL |
 | **[Project2-ROS2-VLA](https://github.com/mi1nn/Project2-ROS2-VLA)** | 음성 명령으로 동작하는 키트 조립 로봇. STT로 받은 자연어 명령을 키워드 추출·검증을 거쳐 로봇 작업 단위로 변환하고, RealSense 기반 객체 인식과 6D pose 추정으로 파지 위치를 결정합니다. | ROS2 · MoveIt · YOLO · Whisper · RealSense |
 
@@ -28,11 +29,11 @@
 
 ## Tech Stack
 
-**Robotics** ROS2 (Jazzy) · tf2 · Doosan Robotics API · ros2_control · OnRobot Gripper
+**Robotics** ROS2 (Jazzy) · Nav2 · AMCL · tf2 · TurtleBot4 · Doosan Robotics API · ros2_control · OnRobot Gripper
 
 **Simulation** NVIDIA Isaac Sim · Isaac Lab · USD / PhysX 
 
-**AI / Vision** YOLO · OpenCV · AprilTag · Intel RealSense · RGB-D Point Cloud · Whisper (STT) · PyTorch
+**AI / Vision** YOLO · OpenCV · AprilTag · Intel RealSense · OAK-D · RGB-D Point Cloud · Whisper (STT) · PyTorch
 
 **Backend** Python · FastAPI · PostgreSQL · Docker
 
@@ -44,7 +45,7 @@
 
 ## Background
 
-- **두산로보틱스 ROKEY AI 부트캠프** — ROS2 협동로봇 개발 과정
+- **두산로보틱스 ROKEY AI 부트캠프** — ROS2 협동로봇·AMR 개발 과정 수료
 - **AI 헬스케어 스타트업, CS/Field Engineer** — 솔루션 현장 배포, 서버 운영, 기술지원
 - **K-Move 미래 모빌리티 품질경영 과정 (620시간)** — ISO 9001/14001/45001, IATF 16949, 비즈니스 영어 회화
 - **기계공학 학사** - 4대 역학(동역학, 열역학, 유체역학, 고체역학), 공학 수학, 기구학, 수치해석, 기계진동 등 공학 과목 수료
