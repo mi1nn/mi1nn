@@ -51,7 +51,7 @@ At the Doosan Robotics **ROKEY AI Bootcamp**, I built ROS 2 robot systems in tea
 - **Doosan Robotics ROKEY AI Bootcamp** — Completed the ROS 2 cobot and AMR development track
 - **AI healthcare startup, CS / Field Engineer** — On-site deployment, server operations, technical support
 - **K-Move Future Mobility Quality Management Program (620 hours)** — ISO 9001/14001/45001, IATF 16949, business English
-- **B.S. in Mechanical Engineering** — Dynamics, thermodynamics, fluid mechanics, solid mechanics, kinematics, numerical analysis, mechanical vibration
+- **B.S. in Mechanical Engineering** — Dynamics, thermodynamics, fluid mechanics, solid mechanics, engineering mathematics, kinematics, numerical analysis, mechanical vibration
 - **Working Holiday, New Zealand** — Customer service in English
 
 ---
