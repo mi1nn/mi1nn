@@ -22,10 +22,10 @@
 
 | 프로젝트 | 설명 | 담당 | 핵심 기술 |
 |---|---|---|---|
-| **[satellite-mission-extension-system](https://github.com/mi1nn/satellite-mission-extension-system)** | Isaac Sim 기반 궤도 서비싱 임무 시뮬레이션. 서비스 위성의 7자유도 로봇팔이 표류하는 수명연장 모듈(MEP)을 포획해 이동 중인 위성에 도킹·분리합니다. 손목 카메라 AprilTag로 포획점 pose를 추정·예측해 DLS IK로 추종하고, Astrobee의 RGB-D 포인트 클라우드로 도킹 통로 장애물을 판정해 위험 시 삽입 전에 중단하는 안전 게이트를 두었습니다. 임무 상태는 ROS 2로 실시간 대시보드에 표시하고 Firestore에 기록해 영상과 동기화된 검증이 가능합니다. | 환경 세팅, 도킹 구현 | Isaac Sim · Isaac Lab · ROS 2 · AprilTag · Point Cloud · FastAPI · Firestore |
-| **[overwatch-amr](https://github.com/mi1nn/overwatch-amr)** | 고정 웹캠과 TurtleBot 4가 협업해 움직이는 RC카를 찾아 따라가는 추적 AMR. 웹캠 PC가 YOLO로 RC카를 탐지하고 호모그래피로 map 좌표를 계산해 보내면, 로봇이 Nav2로 접근한 뒤 OAK-D의 bbox 방향과 depth 거리로 위치를 다시 계산해 장애물을 피하며 추적합니다. 접근 → 추적 → 탐색 상태 머신으로 대상을 잃어도 다시 찾으며, YOLOv8·11·26 6개 모델을 같은 조건에서 비교해 YOLO26n(mAP50-95 0.977, 3.2 ms/img)을 선정했습니다. | SLAM 지도 작성, OAK-D 카메라용 YOLO 학습 | ROS 2 · Nav2 · AMCL · SLAM · TurtleBot 4 · OAK-D · YOLO26 |
-| **[assembly-cobot](https://github.com/mi1nn/assembly-cobot)** | F/T 센서 힘제어 기반 태양광 구조물 자동 조립 시스템. 야외 환경의 조명 변화·분진 때문에 비전을 쓸 수 없다는 제약에서 출발해, 3단계 힘제어 핀 삽입(1차 삽입 → 재파지 → 최종 삽입)으로 공차를 흡수하는 방식을 설계했습니다. MES 대시보드부터 로봇 제어 노드까지 전체 스택을 구현했습니다. | PM, 시스템 아키텍처 설계 | ROS 2 · Doosan M0609 · Force Control · Flask · PostgreSQL |
-| **[Project2-ROS2-VLA](https://github.com/mi1nn/Project2-ROS2-VLA)** | 음성 명령으로 동작하는 키트 조립 로봇. STT로 받은 자연어 명령을 키워드 추출·검증을 거쳐 로봇 작업 단위로 변환하고, RealSense 기반 객체 인식과 6D pose 추정으로 파지 위치를 결정합니다. | 비전 (객체 탐지, OctoMap) | ROS 2 · MoveIt · YOLO · OctoMap · Whisper · RealSense |
+| **[satellite-mission-extension-system](https://github.com/mi1nn/satellite-mission-extension-system)** | Isaac Sim에서 궤도 위성 서비싱 임무를 시뮬레이션합니다. 7자유도 로봇팔이 AprilTag로 표류하는 모듈을 추적·포획해 이동 중인 위성에 도킹합니다. Astrobee가 포인트 클라우드로 도킹 통로를 확인해 장애물이 있으면 도킹을 중단합니다. | 환경 세팅, 도킹 구현 | Isaac Sim · Isaac Lab · ROS 2 · AprilTag · Point Cloud · FastAPI · Firestore |
+| **[overwatch-amr](https://github.com/mi1nn/overwatch-amr)** | 움직이는 RC카를 찾아 따라가는 TurtleBot 4 추적 시스템입니다. 고정 웹캠이 YOLO로 RC카 위치를 알려주면 로봇이 Nav2로 접근하고 OAK-D depth로 추적합니다. 대상을 놓치면 상태 머신이 회전 탐색으로 다시 찾습니다. | SLAM 지도 작성, OAK-D 카메라용 YOLO 학습 | ROS 2 · Nav2 · AMCL · SLAM · TurtleBot 4 · OAK-D · YOLO26 |
+| **[assembly-cobot](https://github.com/mi1nn/assembly-cobot)** | 두산 협동로봇으로 태양광 구조물을 자동 조립합니다. 야외의 조명·분진 때문에 비전 대신 3단계 힘제어 삽입으로 부품 공차를 흡수합니다. MES 대시보드에서 로봇 제어까지 작업 흐름 전체를 관리합니다. | PM, 시스템 아키텍처 설계 | ROS 2 · Doosan M0609 · Force Control · Flask · PostgreSQL |
+| **[Project2-ROS2-VLA](https://github.com/mi1nn/Project2-ROS2-VLA)** | 음성 명령으로 동작하는 키트 조립 로봇입니다. STT로 받은 명령을 검증을 거쳐 로봇 작업으로 변환합니다. 객체 탐지와 6D pose 추정으로 파지 위치를 결정합니다. | 비전 (객체 탐지, OctoMap) | ROS 2 · MoveIt · YOLO · OctoMap · Whisper · RealSense |
 
 ---
 
