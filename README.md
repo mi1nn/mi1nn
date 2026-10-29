@@ -31,15 +31,17 @@ At the Doosan Robotics **ROKEY AI Bootcamp**, I built ROS 2 robot systems in tea
 
 ## Tech Stack
 
-**Robotics** ROS 2 (Jazzy) · Nav2 · AMCL · SLAM · tf2 · TurtleBot 4 · ros2_control · OnRobot Gripper
+**Languages** Python · C++ 
+
+**Robotics** ROS 2 (Jazzy) · Nav2 · AMCL · SLAM · tf2 · ros2_control
 
 **Simulation** NVIDIA Isaac Sim · Isaac Lab · USD / PhysX
 
-**AI / Vision** YOLO · OpenCV · AprilTag · Intel RealSense · OAK-D · RGB-D Point Cloud · OctoMap · PyTorch
+**AI / Vision** YOLO · OpenCV · AprilTag · OAK-D · RGB-D Point Cloud · OctoMap · PyTorch
 
-**Engineering** CATIA · ANSYS (modal analysis) · Six Sigma GB/BB · ISO 9001 / IATF 16949
+**Engineering** CATIA · ANSYS (modal analysis) · Six Sigma GB/BB
 
-**Languages & Tools** Python · Git · Docker · PostgreSQL · Linux (Ubuntu) · Bash
+**Tools** Git · Docker · PostgreSQL · Linux (Ubuntu) · Bash
 
 ---
 
