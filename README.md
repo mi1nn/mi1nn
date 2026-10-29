@@ -37,11 +37,9 @@ At the Doosan Robotics **ROKEY AI Bootcamp**, I built ROS 2 robot systems in tea
 
 **AI / Vision** YOLO · OpenCV · AprilTag · Intel RealSense · OAK-D · RGB-D Point Cloud · OctoMap · PyTorch
 
-**Backend** Python · PostgreSQL · Docker
-
 **Engineering** CATIA · ANSYS (modal analysis) · Six Sigma GB/BB · ISO 9001 / IATF 16949
 
-**Tools** Git · Linux (Ubuntu) · Bash
+**Languages & Tools** Python · Git · Docker · PostgreSQL · Linux (Ubuntu) · Bash
 
 ---
 

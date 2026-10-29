@@ -31,17 +31,15 @@
 
 ## Tech Stack
 
-**Robotics** ROS 2 (Jazzy) · Nav2 · AMCL · SLAM · tf2 · TurtleBot 4 · Doosan Robotics API · ros2_control · OnRobot Gripper
+**Robotics** ROS 2 (Jazzy) · Nav2 · AMCL · SLAM · tf2 · TurtleBot 4 · ros2_control · OnRobot Gripper
 
 **Simulation** NVIDIA Isaac Sim · Isaac Lab · USD / PhysX
 
-**AI / Vision** YOLO · OpenCV · AprilTag · Intel RealSense · OAK-D · RGB-D Point Cloud · OctoMap · Whisper (STT) · PyTorch
-
-**Backend** Python · FastAPI · PostgreSQL · Docker
+**AI / Vision** YOLO · OpenCV · AprilTag · Intel RealSense · OAK-D · RGB-D Point Cloud · OctoMap · PyTorch
 
 **Engineering** CATIA · ANSYS (모달해석) · Six Sigma GB/BB · ISO 9001 / IATF 16949
 
-**Tools** Git · Linux (Ubuntu) · Bash
+**Languages & Tools** Python · Git · Docker · PostgreSQL · Linux (Ubuntu) · Bash
 
 ---
 
