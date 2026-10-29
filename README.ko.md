@@ -8,7 +8,7 @@
 
 ## About
 
-기계공학 학부에서 구조·진동 해석을 다루며 하드웨어를 이해했고, AI 헬스케어 스타트업에서 필드 엔지니어로 일하며 배포된 AI 시스템이 실제 현장에서 어떻게 돌아가고 어디서 문제가 생기는지를 배웠습니다. 솔루션을 병원에 직접 설치하고 서버를 운영하면서, 제가 하고 싶은 일이 완성된 제품을 지원하는 쪽이 아니라 **하드웨어와 소프트웨어가 만나는 지점을 직접 설계하는 쪽**이라는 걸 알게 됐습니다. 그래서 로보틱스로 방향을 옮겼습니다.
+기계공학을 전공하며 구조·진동 해석을 다뤘습니다. 이후 AI 헬스케어 스타트업에서 필드 엔지니어로 일하며 병원에 솔루션을 설치하고 그 뒤의 서버를 운영했습니다. 그 일을 하며 배포된 AI 시스템이 실제 현장에서 어떻게 돌아가고 어디서 문제가 생기는지를 배웠습니다. 동시에 다음에 하고 싶은 일도 분명해졌습니다. 완성된 제품을 지원하는 것이 아니라, **하드웨어와 소프트웨어가 만나는 지점을 직접 설계하는 일**입니다. 그래서 로보틱스로 방향을 옮겼습니다.
 
 두산로보틱스 **ROKEY AI 부트캠프**에서 ROS 2 기반 로봇 시스템을 개발했습니다. 실제 협동로봇의 힘제어 조립, 웹캠과 AMR이 협업해 움직이는 대상을 추적하는 시스템, Isaac Sim에서 시뮬레이션한 궤도 서비싱 임무를 팀 프로젝트로 진행했습니다.
 
@@ -31,15 +31,17 @@
 
 ## Tech Stack
 
-**Robotics** ROS 2 (Jazzy) · Nav2 · AMCL · SLAM · tf2 · TurtleBot 4 · ros2_control · OnRobot Gripper
+**Languages** Python · C++ 
+
+**Robotics** ROS 2 (Jazzy) · Nav2 · AMCL · SLAM · tf2 · ros2_control
 
 **Simulation** NVIDIA Isaac Sim · Isaac Lab · USD / PhysX
 
-**AI / Vision** YOLO · OpenCV · AprilTag · Intel RealSense · OAK-D · RGB-D Point Cloud · OctoMap · PyTorch
+**AI / Vision** YOLO · OpenCV · AprilTag · OAK-D · RGB-D Point Cloud · OctoMap · PyTorch
 
-**Engineering** CATIA · ANSYS (모달해석) · Six Sigma GB/BB · ISO 9001 / IATF 16949
+**Engineering** CATIA · ANSYS (모달해석) · Six Sigma GB/BB
 
-**Languages & Tools** Python · Git · Docker · PostgreSQL · Linux (Ubuntu) · Bash
+**Tools** Git · Docker · PostgreSQL · Linux (Ubuntu) · Bash
 
 ---
 
@@ -49,7 +51,7 @@
 - **두산로보틱스 ROKEY AI 부트캠프** — ROS 2 협동로봇·AMR 개발 과정 수료
 - **AI 헬스케어 스타트업, CS/Field Engineer** — 솔루션 현장 배포, 서버 운영, 기술지원
 - **K-Move 미래 모빌리티 품질경영 과정 (620시간)** — ISO 9001/14001/45001, IATF 16949, 비즈니스 영어 회화
-- **기계공학 학사** — 4대 역학(동역학, 열역학, 유체역학, 고체역학), 공학 수학, 기구학, 수치해석, 기계진동
+- **기계공학 학사** — 4대 역학(동역학, 열역학, 유체역학, 고체역학), 기구학, 수치해석, 기계진동
 - **뉴질랜드 워킹홀리데이** — 영어 기반 고객 응대 경험
 
 ---
