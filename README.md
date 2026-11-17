@@ -12,12 +12,12 @@ As a field engineer at an AI healthcare startup, I installed our solution in hos
 
 ## 🚀 Projects
 
-Click a project for my part and results.
+Click a project for my part and results (한국어 links are next to each).
 
-- **[Satellite Mission Extension](projects/satellite-mission-extension-system.md)** — Orbital capture and docking simulated in Isaac Sim *(environment setup, docking)* · [Code](https://github.com/mi1nn/satellite-mission-extension-system)
-- **[Overwatch AMR](projects/overwatch-amr.md)** — Webcam + TurtleBot 4 moving-target tracking *(AMR vision, homography, chase control)* · [Code](https://github.com/mi1nn/overwatch-amr)
-- **[Assembly-Cobot](projects/assembly-cobot.md)** — Vision-free, force-controlled solar structure assembly *(PM, system architecture)* · [Code](https://github.com/mi1nn/assembly-cobot)
-- **[Disaster Relief Kit Assembly](projects/disaster-kit-assembly.md)** — Voice- and vision-driven kit packing with a cobot *(ROS 2 interfaces, voice & vision, OctoMap, integration)* · [Code](https://github.com/mi1nn/voice-controlled-kit-assembly)
+- **[Satellite Mission Extension](projects/satellite-mission-extension-system.md)** — Orbital capture and docking simulated in Isaac Sim *(environment setup, docking)* · [Code](https://github.com/mi1nn/satellite-mission-extension-system) · [한국어](projects/satellite-mission-extension-system.ko.md)
+- **[Overwatch AMR](projects/overwatch-amr.md)** — Webcam + TurtleBot 4 moving-target tracking *(AMR vision, homography, chase control)* · [Code](https://github.com/mi1nn/overwatch-amr) · [한국어](projects/overwatch-amr.ko.md)
+- **[Assembly-Cobot](projects/assembly-cobot.md)** — Vision-free, force-controlled solar structure assembly *(PM, system architecture)* · [Code](https://github.com/mi1nn/assembly-cobot) · [한국어](projects/assembly-cobot.ko.md)
+- **[Disaster Relief Kit Assembly](projects/disaster-kit-assembly.md)** — Voice- and vision-driven kit packing with a cobot *(ROS 2 interfaces, voice & vision, OctoMap, integration)* · [Code](https://github.com/mi1nn/voice-controlled-kit-assembly) · [한국어](projects/disaster-kit-assembly.ko.md)
 
 ## 🛠 Tech Stacks
 
