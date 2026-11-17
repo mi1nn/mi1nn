@@ -1,6 +1,6 @@
 # Automated Satellite Mission Extension System
 
-**Team project · Doosan Robotics ROKEY AI Bootcamp · Sep 2026**
+**Team project (3 people) · Doosan Robotics ROKEY AI Bootcamp · Sep 2026**
 📂 Code: [mi1nn/satellite-mission-extension-system](https://github.com/mi1nn/satellite-mission-extension-system) · 🇰🇷 [한국어](satellite-mission-extension-system.ko.md) · ← [Profile](../README.md)
 
 <p align="center">

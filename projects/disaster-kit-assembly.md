@@ -1,6 +1,6 @@
 # Voice & Vision Disaster Relief Kit Assembly
 
-**Team project · Doosan Robotics ROKEY AI Bootcamp · Sep 2026**
+**Team project (4 people) · Doosan Robotics ROKEY AI Bootcamp · Sep 2026**
 📂 Code: [mi1nn/voice-controlled-kit-assembly](https://github.com/mi1nn/voice-controlled-kit-assembly) · 🇰🇷 [한국어](disaster-kit-assembly.ko.md) · ← [Profile](../README.md)
 
 <p align="center">
@@ -14,27 +14,35 @@ A Doosan M0609 cobot that packs disaster relief kits from voice commands. A spok
 
 ## My role
 
-**Voice package (`kit_voice`), vision package (`kit_vision`), and the OctoMap obstacle environment**
+**System and ROS 2 interface design, voice package (`kit_voice`), vision package (`kit_vision`) with initial position estimation, OctoMap obstacle environment, and system integration**
 
 ## What I did
 
-### 1. `kit_voice` — voice command to a validated task
+### 1. System and ROS 2 interface design
+- **Interface contracts first.** Defined the topics, services, and messages between voice, vision, controller, motion, and database in a shared `kit_interfaces` package, so each package depends on the contract rather than on another package's code.
+- **Work in parallel.** With the contracts fixed early, a mock detection publisher let the team wire up the coordinate pipeline before the model and the robot were ready.
+
+### 2. `kit_voice` — voice command to a validated task
 - **Wake word.** Listens for "hello rokey" with openWakeWord, reading the mic in 80 ms frames. Before speech-to-text starts, the node releases the mic so STT can open the same device, and it reopens the mic automatically if a USB mic drops or connects late.
 - **Speech to text.** Records 5 s at 16 kHz and sends it to the Whisper API. A 16 kHz input device is picked automatically, with an override for other setups.
 - **Command parsing with validation.** GPT-4o (via LangChain) turns the sentence into JSON — kit name, items, quantities — using a prompt built from the item list and kit recipes (e.g. "kit 1" → cup noodle, shampoo refill, yanggaeng). The result is checked before it reaches the robot: unsupported items, invalid quantities, or non-JSON replies are rejected. The item list is read from `kit_vision`'s class file, so voice and vision always agree on item names.
 - **Service interface.** Exposed as the `/get_command` service. OpenAI credit exhaustion and rate limits are reported as separate errors, because one needs a top-up and the other only a retry.
 
-### 2. `kit_vision` — object detection to 3D positions
+### 3. `kit_vision` — object detection to 3D positions
 - **Camera input.** Subscribes to RealSense color, aligned depth, and camera info, keeping only the latest frame, and drops color/depth pairs whose timestamps are too far apart.
 - **Inference loop.** Runs the YOLO segmentation model in its own thread at about 3 Hz. PyTorch was grabbing 10–16 CPU threads and starving the RealSense USB driver, so I capped its thread count.
 - **3D position.** For each item, the depth is the **median of valid depth values inside its segmentation polygon** — more robust than one center pixel — and is converted to camera coordinates with the camera intrinsics. Results are published with class, score, position, and mask, plus a debug image.
+- **Initial position estimation.** Converted camera-frame positions to the robot's base frame with the hand–eye calibration, and added a timestamp check so the robot never acts on a stale detection.
 - **Container.** Packaged GPU inference in Docker.
 
-### 3. OctoMap obstacle environment for MoveIt 2
+### 4. OctoMap obstacle environment for MoveIt 2
 - **Point cloud filtering.** RealSense point cloud → drop invalid points → drop points closer than 0.28 m → transform to the robot base → 1 cm voxels → keep a voxel only if at least 4 of its 27 neighbors are occupied. This removes isolated depth noise while keeping thin box walls and corners.
 - **Static map.** The robot scans for 3 s from an observation pose, then the map is frozen and reused across tasks, so planning does not slow down or change mid-task. The map is cleared on startup.
 - **Iterated to a narrower scope.** Live OctoMap kept marking the arm, the gripper, and tray-surface noise as obstacles, so plans failed often. I tuned voxel size, RealSense filters, and target masking through 16 versions, and finally limited the map to the inspection area as a static map.
 - **Allowed collisions.** The gripper and wrist links are allowed to touch the OctoMap; otherwise points on the gripper itself block every plan. This is merged into the *current* allowed-collision matrix, because sending a partial matrix replaces the whole one and silently drops the robot's own self-collision rules.
+
+### 5. System integration
+- Connected the end-to-end flow — voice → vision → position estimation → controller → motion → inspection → database — and ran the full system on the real robot with the team.
 
 ## Results
 

@@ -1,6 +1,6 @@
 # Overwatch AMR — RC Car Chasing Robot
 
-**Team project · Doosan Robotics ROKEY AI Bootcamp · Oct 2026**
+**Team project (3 people) · Doosan Robotics ROKEY AI Bootcamp · Oct 2026**
 📂 Code: [mi1nn/overwatch-amr](https://github.com/mi1nn/overwatch-amr) · 🇰🇷 [한국어](overwatch-amr.ko.md) · ← [Profile](../README.md)
 
 <p align="center">

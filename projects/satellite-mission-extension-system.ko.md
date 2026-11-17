@@ -1,6 +1,6 @@
 # 위성 수명연장 임무 자동화 시스템
 
-**팀 프로젝트 · 두산로보틱스 ROKEY AI 부트캠프 · 2026.09**
+**팀 프로젝트 (3명) · 두산로보틱스 ROKEY AI 부트캠프 · 2026.09**
 📂 코드: [mi1nn/satellite-mission-extension-system](https://github.com/mi1nn/satellite-mission-extension-system) · 🇺🇸 [English](satellite-mission-extension-system.md) · ← [프로필](../README.ko.md)
 
 <p align="center">
