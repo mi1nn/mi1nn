@@ -29,7 +29,7 @@ A TurtleBot 4 that finds and follows a moving RC car with help from a fixed webc
 - The calibration node reports per-point reprojection error, RANSAC inliers, and leave-one-out error so a bad calibration can be caught before driving.
 
 ### 3. Chase motion (depth camera + AMCL pose + Nav2)
-Once the robot sees the car, it computes the car's position on the map and follows it at a fixed distance. The robot runs in an enclosed test area on a map prepared in advance: AMCL localizes it on that map with the 2D lidar, and the same lidar updates Nav2's costmap, so obstacles in the path are detected while chasing.
+Once the robot sees the car, it computes the car's position on the map and follows it at a fixed distance. I built the map of the enclosed test area myself with SLAM (once by autonomous exploration, once by manual driving, 0.05 m/px) and saved it. At runtime the robot does not map; AMCL localizes it on the saved map with the 2D lidar, and the same lidar updates Nav2's costmap, so obstacles in the path are detected while chasing.
 
 1. **Bearing from the image.** The horizontal offset of the bounding box, together with the OAK-D's 69° horizontal field of view, gives the angle to the car.
 2. **Distance from depth.** The median of a small depth window at the box center gives the distance along the optical axis, corrected by the bearing to get the true range.
@@ -67,4 +67,4 @@ Six models trained with identical settings (100 epochs, patience 20, 640 px, bat
 
 ## Tech
 
-ROS 2 Jazzy · TurtleBot 4 · 2D LiDAR · Nav2 · AMCL · OAK-D · YOLO26 · Ultralytics · Homography
+ROS 2 Jazzy · TurtleBot 4 · 2D LiDAR · SLAM (mapping) · AMCL · Nav2 · OAK-D · YOLO26 · Ultralytics · Homography
