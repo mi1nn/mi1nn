@@ -21,7 +21,6 @@ An orbital servicing mission simulated in Isaac Sim. A servicer's 7-DOF robot ar
 - **Built the simulation environment.** Set up Isaac Sim 5.0, Isaac Lab, and a fork of Space Robotics Bench, then assembled the scene: satellite and MEP assets, scale, and camera placement.
 - **Implemented the docking sequence end to end.** MRV approach → MEP capture → speed matching with the moving satellite → probe alignment and insertion → gripper release and arm retreat → MRV separation.
 - **Adopted a reference-based docking controller.** Brought in a controller that tracks the satellite's *predicted* pose while aligning position and attitude together (`coupled_predictive`), made it the default, and kept the earlier sequential controller (`legacy`) selectable from config.
-- **Connected the simulator to monitoring.** Published capture and docking metrics over ROS 2 so the dashboard and Firestore logs could show mission progress.
 
 ## Results
 
