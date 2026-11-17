@@ -31,7 +31,8 @@
 | 나머지 (v8n/s, 11n/s, 26s) | 0.93 – 0.98 | — |
 
 <p align="center">
-  <img src="https://github.com/mi1nn/overwatch-amr/raw/main/docs/images/comparison_graphs.png" width="80%" alt="YOLO 모델 비교">
+  <img src="https://github.com/mi1nn/overwatch-amr/raw/main/results/runs/compare/03_speed_size_vs_accuracy.png" width="90%" alt="AMR YOLO 모델 정확도 대비 속도·크기">
+  <br><sub>로봇(OAK-D) 모델의 test mAP50-95 대비 추론 시간·파라미터 수. 주황색 YOLOv8s는 발산한 1차 학습 결과이며, 재학습 후 0.95까지 올라갔습니다.</sub>
 </p>
 
 > test 셋이 12장(박스 24개)으로 작아서 mAP50-95가 0.01~0.02 차이 나는 것은 통계적으로 의미 있는 차이로 보기 어렵습니다. YOLO26n은 정확도와 함께 로봇에서의 작은 크기와 속도를 고려해 선정했습니다.

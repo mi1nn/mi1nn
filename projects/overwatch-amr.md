@@ -31,7 +31,8 @@ A TurtleBot 4 that finds and follows a moving RC car with help from a fixed webc
 | Others (v8n/s, 11n/s, 26s) | 0.93 – 0.98 | — |
 
 <p align="center">
-  <img src="https://github.com/mi1nn/overwatch-amr/raw/main/docs/images/comparison_graphs.png" width="80%" alt="YOLO model comparison">
+  <img src="https://github.com/mi1nn/overwatch-amr/raw/main/results/runs/compare/03_speed_size_vs_accuracy.png" width="90%" alt="AMR YOLO models: accuracy vs speed and size">
+  <br><sub>Robot (OAK-D) models: test mAP50-95 vs inference time and parameter count. YOLOv8s (orange) is the first, diverged run; retraining reached 0.95.</sub>
 </p>
 
 > The test set is small (12 images, 24 boxes), so differences of 0.01–0.02 in mAP50-95 are not statistically meaningful. YOLO26n was chosen for its accuracy *and* small size and speed on the robot.
