@@ -25,17 +25,31 @@ A TurtleBot 4 that finds and follows a moving RC car with help from a fixed webc
 
 ## Results
 
-| Model | Test mAP50-95 | Inference |
-|---|---:|---:|
-| **YOLO26n (selected)** | **0.977** | **3.17 ms/img** |
-| Others (v8n/s, 11n/s, 26s) | 0.93 – 0.98 | — |
+Six models trained with identical settings (100 epochs, patience 20, 640 px, batch 16) and evaluated on the same test set.
+
+| Model | Params (M) | Test mAP50-95 | Latency (ms/img) | |
+|---|---:|---:|---:|---|
+| **YOLO26n** | **2.50** | **0.977** | **3.17** | ✅ selected |
+| YOLO11n | 2.59 | 0.964 | 3.18 | |
+| YOLOv8n | 3.01 | 0.949 | 3.48 | |
+| YOLO26s | 9.95 | 0.961 | 7.23 | |
+| YOLOv8s (retrained, patience 50) | 11.14 | 0.953 | 6.84 | |
+| YOLO11s | 9.43 | 0.928 | 6.16 | |
+| YOLOv8s (first run) | 11.14 | 0.500 | 7.10 | ❌ diverged, missed every `dummy` |
 
 <p align="center">
   <img src="https://github.com/mi1nn/overwatch-amr/raw/main/results/runs/compare/03_speed_size_vs_accuracy.png" width="90%" alt="AMR YOLO models: accuracy vs speed and size">
-  <br><sub>Robot (OAK-D) models: test mAP50-95 vs inference time and parameter count. YOLOv8s (orange) is the first, diverged run; retraining reached 0.95.</sub>
+  <br><sub>Test mAP50-95 vs latency and parameter count. YOLOv8s (orange) is the first, diverged run.</sub>
 </p>
 
-> The test set is small (12 images, 24 boxes), so differences of 0.01–0.02 in mAP50-95 are not statistically meaningful. YOLO26n was chosen for its accuracy *and* small size and speed on the robot.
+**What the comparison showed**
+- **Every properly trained model got all 24 test boxes right**: no misclassification, false positive, or miss between `car` and `dummy`.
+- **Small (s) models gave no benefit at this data scale.** They were about 2× slower than the nano (n) models with equal or lower accuracy, and were more prone to diverging early in training.
+- **YOLO26n was the best fit for the robot**: the highest mAP50-95 and the lowest latency with the fewest parameters.
+
+> Latency is preprocessing + inference + postprocessing at batch 1 on an RTX 3060 Laptop GPU; it will differ on the robot PC. The test set is small (12 images, 24 boxes), so mAP50-95 differences of 0.01–0.02 are not statistically meaningful.
+
+📄 Full analysis (Korean): [training report](https://github.com/mi1nn/overwatch-amr/blob/main/docs/amr/YOLO_TRAINING_REPORT.md) · [model comparison](https://github.com/mi1nn/overwatch-amr/blob/main/docs/amr/AMR-VISION.md)
 
 ## Tech
 

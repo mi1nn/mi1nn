@@ -25,17 +25,31 @@
 
 ## 결과
 
-| 모델 | Test mAP50-95 | 추론 속도 |
-|---|---:|---:|
-| **YOLO26n (선정)** | **0.977** | **3.17 ms/img** |
-| 나머지 (v8n/s, 11n/s, 26s) | 0.93 – 0.98 | — |
+6개 모델을 같은 설정(100 epoch, patience 20, 640 px, batch 16)으로 학습하고 같은 test 셋으로 평가했습니다.
+
+| 모델 | 파라미터 (M) | Test mAP50-95 | 지연 시간 (ms/img) | |
+|---|---:|---:|---:|---|
+| **YOLO26n** | **2.50** | **0.977** | **3.17** | ✅ 선정 |
+| YOLO11n | 2.59 | 0.964 | 3.18 | |
+| YOLOv8n | 3.01 | 0.949 | 3.48 | |
+| YOLO26s | 9.95 | 0.961 | 7.23 | |
+| YOLOv8s (재학습, patience 50) | 11.14 | 0.953 | 6.84 | |
+| YOLO11s | 9.43 | 0.928 | 6.16 | |
+| YOLOv8s (1차) | 11.14 | 0.500 | 7.10 | ❌ 발산, `dummy` 전부 미검출 |
 
 <p align="center">
   <img src="https://github.com/mi1nn/overwatch-amr/raw/main/results/runs/compare/03_speed_size_vs_accuracy.png" width="90%" alt="AMR YOLO 모델 정확도 대비 속도·크기">
-  <br><sub>로봇(OAK-D) 모델의 test mAP50-95 대비 추론 시간·파라미터 수. 주황색 YOLOv8s는 발산한 1차 학습 결과이며, 재학습 후 0.95까지 올라갔습니다.</sub>
+  <br><sub>지연 시간·파라미터 수 대비 test mAP50-95. 주황색 YOLOv8s는 발산한 1차 학습 결과입니다.</sub>
 </p>
 
-> test 셋이 12장(박스 24개)으로 작아서 mAP50-95가 0.01~0.02 차이 나는 것은 통계적으로 의미 있는 차이로 보기 어렵습니다. YOLO26n은 정확도와 함께 로봇에서의 작은 크기와 속도를 고려해 선정했습니다.
+**비교로 확인한 것**
+- **정상 학습된 모델은 모두 test 박스 24개를 전부 맞혔습니다.** `car`와 `dummy` 사이 오분류, 오탐, 미탐이 하나도 없었습니다.
+- **이 데이터 규모에서는 s 모델의 이점이 없었습니다.** n 모델보다 약 2배 느리면서 정확도는 같거나 낮았고, 학습 초반에 발산하기도 쉬웠습니다.
+- **로봇에는 YOLO26n이 가장 적합했습니다.** mAP50-95가 가장 높고, 파라미터가 가장 적으면서 지연 시간도 가장 짧았습니다.
+
+> 지연 시간은 RTX 3060 Laptop GPU에서 batch 1로 잰 전처리+추론+후처리 합계이며, 로봇 PC에서는 달라집니다. test 셋이 12장(박스 24개)으로 작아서 mAP50-95가 0.01~0.02 차이 나는 것은 통계적으로 의미 있는 차이로 보기 어렵습니다.
+
+📄 전체 분석: [학습 통계 보고서](https://github.com/mi1nn/overwatch-amr/blob/main/docs/amr/YOLO_TRAINING_REPORT.md) · [모델 비교](https://github.com/mi1nn/overwatch-amr/blob/main/docs/amr/AMR-VISION.md)
 
 ## 기술
 
