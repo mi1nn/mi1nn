@@ -1,11 +1,11 @@
 # Voice & Vision Disaster Relief Kit Assembly
 
 **Team project · Doosan Robotics ROKEY AI Bootcamp · Sep 2026**
-📂 Code: [mi1nn/Project2-ROS2-VLA](https://github.com/mi1nn/Project2-ROS2-VLA) · 🇰🇷 [한국어](disaster-kit-assembly.ko.md) · ← [Profile](../README.md)
+📂 Code: [mi1nn/voice-controlled-kit-assembly](https://github.com/mi1nn/voice-controlled-kit-assembly) · 🇰🇷 [한국어](disaster-kit-assembly.ko.md) · ← [Profile](../README.md)
 
 <p align="center">
-  <img src="https://github.com/mi1nn/Project2-ROS2-VLA/raw/main/image/cycle.gif" width="49%" alt="Kit assembly cycle">
-  <img src="https://github.com/mi1nn/Project2-ROS2-VLA/raw/main/image/cup.gif" width="49%" alt="Cup noodle grasp">
+  <img src="https://github.com/mi1nn/voice-controlled-kit-assembly/raw/main/image/cycle.gif" width="49%" alt="Kit assembly cycle">
+  <img src="https://github.com/mi1nn/voice-controlled-kit-assembly/raw/main/image/cup.gif" width="49%" alt="Cup noodle grasp">
 </p>
 
 ## Overview
@@ -33,20 +33,61 @@ A Doosan M0609 cobot that packs disaster relief kits from voice commands. A spok
 ### 3. OctoMap obstacle environment for MoveIt 2
 - **Point cloud filtering.** RealSense point cloud → drop invalid points → drop points closer than 0.28 m → transform to the robot base → 1 cm voxels → keep a voxel only if at least 4 of its 27 neighbors are occupied. This removes isolated depth noise while keeping thin box walls and corners.
 - **Static map.** The robot scans for 3 s from an observation pose, then the map is frozen and reused across tasks, so planning does not slow down or change mid-task. The map is cleared on startup.
+- **Iterated to a narrower scope.** Live OctoMap kept marking the arm, the gripper, and tray-surface noise as obstacles, so plans failed often. I tuned voxel size, RealSense filters, and target masking through 16 versions, and finally limited the map to the inspection area as a static map.
 - **Allowed collisions.** The gripper and wrist links are allowed to touch the OctoMap; otherwise points on the gripper itself block every plan. This is merged into the *current* allowed-collision matrix, because sending a partial matrix replaces the whole one and silently drops the robot's own self-collision rules.
 
 ## Results
 
-The detection model below was trained by a teammate; my `kit_vision` node runs it in the pipeline.
+### First end-to-end evaluation (Sep 8, 2026 · v0.1.0)
+22 runs on the real robot, with 8–9 items placed randomly in the pick area and a box placed on the kit tray as an obstacle. Results were analyzed from the MongoDB execution logs; because the gripper's own success flag was unreliable, grasp results were labeled by hand from video.
 
-| Fine-tuned model (validation, 319 objects) | Box | Mask |
+| Metric | Result |
+|---|---:|
+| **Command keyword recognition** (voice) | **20/22 (90.9%)** |
+| **Valid JSON command** (LLM + validation) | **22/22 (100%)** |
+| Item pick-and-place success | 84/116 (72.4%) |
+| Kit composition (items actually in the kit) | 78/112 (69.6%) |
+| Kits fully assembled | 3/22 (13.6%) |
+| **End-to-end success** (assembled *and* final inspection PASS) | **0/22 (0%)** |
+| Longest continuous run | 1 h 13 min |
+
+- **Voice side (my `kit_voice`)**: every recognized command became valid JSON. The two misses were speech-recognition errors on the kit name ("응급기트", "시사 킬투"), not parsing errors.
+- **Where it failed**: the bottleneck was grasping and the final inspection, not perception of commands. Grasp success varied widely by item — ham 86.7%, shampoo refill and spoon 85.7%, but cup noodle 53.3% and mask 16.7% — showing that a 2D mask-and-depth grasp does not fit every shape.
+
+<details>
+<summary><strong>Grasp success by item</strong></summary>
+
+| Item | Success | Item | Success |
+|---|---:|---|---:|
+| Ham | 13/15 (86.7%) | Yanggaeng | 14/20 (70.0%) |
+| Shampoo refill | 6/7 (85.7%) | Travel tissue | 6/9 (66.7%) |
+| Disposable spoon | 12/14 (85.7%) | Cup noodle | 8/15 (53.3%) |
+| Scrubber | 13/16 (81.3%) | Mask | 1/6 (16.7%) |
+| Formula milk | 11/14 (78.6%) | | |
+
+</details>
+
+### What changed after the evaluation (v0.2.0)
+- **Motion:** fixed Cartesian paths and joint goals failed repeatedly, so picking and observation moved to **MoveIt 2 pose goals** with collision checking.
+- **OctoMap:** applied to the inspection area as the static map described above. Applying it to the pick and observe areas was dropped because point-cloud noise kept creating false obstacles.
+- **Grasping:** cup noodles got a 6-DoF grasp pipeline (FoundationPose + GraspGenX) with up to 5 candidates and 3 re-observations.
+
+> **Limitation:** the planned second evaluation (20 tasks) was not run, so no improvement over the first evaluation is claimed.
+
+### Detection model
+Trained by a teammate; my `kit_vision` node runs it in the pipeline.
+
+| Fine-tuned YOLO26s-seg (validation, 319 objects) | Box | Mask |
 |---|---:|---:|
 | Precision | 97.7% | 98.5% |
 | Recall | 96.3% | 96.9% |
 | mAP50 | 99.0% | 99.0% |
 | mAP50-95 | 94.8% | 91.1% |
 
-> These are detection and segmentation scores, not the robot's grasp success rate.
+> These are detection scores, not grasp success rates.
+
+### Demo videos
+[Demo 1](https://youtu.be/gEU7pFmAMOg) · [Demo 2](https://youtu.be/UJp21P18yG4) · [Demo 3](https://youtu.be/BEMkkk1yyE4) · [Demo 4](https://youtu.be/7j6hGa2-f7E)
 
 ## Tech
 

@@ -17,7 +17,7 @@ Click a project for my part and results.
 - **[Satellite Mission Extension](projects/satellite-mission-extension-system.md)** — Orbital capture and docking simulated in Isaac Sim *(environment setup, docking)* · [Code](https://github.com/mi1nn/satellite-mission-extension-system)
 - **[Overwatch AMR](projects/overwatch-amr.md)** — Webcam + TurtleBot 4 moving-target tracking *(AMR vision, homography, chase control)* · [Code](https://github.com/mi1nn/overwatch-amr)
 - **[Assembly-Cobot](projects/assembly-cobot.md)** — Vision-free, force-controlled solar structure assembly *(PM, system architecture)* · [Code](https://github.com/mi1nn/assembly-cobot)
-- **[Disaster Relief Kit Assembly](projects/disaster-kit-assembly.md)** — Voice- and vision-driven kit packing with a cobot *(voice & vision packages, OctoMap)* · [Code](https://github.com/mi1nn/Project2-ROS2-VLA)
+- **[Disaster Relief Kit Assembly](projects/disaster-kit-assembly.md)** — Voice- and vision-driven kit packing with a cobot *(voice & vision packages, OctoMap)* · [Code](https://github.com/mi1nn/voice-controlled-kit-assembly)
 
 ## 🛠 Tech Stacks
 
