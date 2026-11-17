@@ -39,6 +39,32 @@ Once the robot sees the car, it computes the car's position on the map and follo
 
 ## Results
 
+### Chase performance (final demo)
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="../assets/overwatch-chase-distance-dark.png">
+  <img src="../assets/overwatch-chase-distance-light.png" width="100%" alt="Distance to the RC car over time during the final demo, staying around the 1.0 m target">
+</picture>
+
+| Readings while chasing | Median distance | Middle 50% | Within 0.7–1.3 m |
+|---:|---:|---:|---:|
+| 266 | 0.93 m | 0.83 – 1.21 m | 79% |
+
+- **The robot held close to the 1.0 m target** while a person moved the RC car around the arena.
+- **Spikes up to 2.8 m** are moments when the car was pulled away quickly; the robot closed the gap again within a few seconds.
+- **When the car stopped (from about 172 s), the robot settled at 0.83 m and held.** It stops once 1.0 m of path remains and never reverses, so it comes to rest just inside the target.
+
+> Distances were read every 0.5 s from the depth value the follower node draws on its camera window in the demo recording, then spot-checked against the frames. This is one demo run with the car moved by hand, not a controlled benchmark.
+
+### Maps built with SLAM
+
+<p align="center">
+  <img src="../assets/overwatch-slam-maps.png" width="55%" alt="Two occupancy maps of the enclosed test area">
+  <br><sub>Occupancy maps of the enclosed test area (0.05 m/px), built by autonomous exploration and by manual driving.</sub>
+</p>
+
+### AMR vision model comparison
+
 Six models trained with identical settings (100 epochs, patience 20, 640 px, batch 16) and evaluated on the same test set.
 
 | Model | Params (M) | Test mAP50-95 | Latency (ms/img) | |
