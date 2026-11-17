@@ -12,10 +12,12 @@ AI 헬스케어 스타트업에서 필드 엔지니어로 일하며 병원에 �
 
 ## 🚀 Projects
 
-- **[satellite-mission-extension-system](https://github.com/mi1nn/satellite-mission-extension-system)** — Isaac Sim 기반 궤도 위성 포획·도킹 시뮬레이션 *(환경 세팅, 도킹 구현)*
-- **[overwatch-amr](https://github.com/mi1nn/overwatch-amr)** — 고정 웹캠과 TurtleBot 4가 협업하는 이동 대상 추적 *(SLAM, YOLO 학습)*
-- **[assembly-cobot](https://github.com/mi1nn/assembly-cobot)** — 비전 없이 힘제어로 해결한 태양광 구조물 조립 *(PM, 시스템 아키텍처)*
-- **[Project2-ROS2-VLA](https://github.com/mi1nn/Project2-ROS2-VLA)** — 음성 명령으로 동작하는 키트 조립 로봇 *(비전, OctoMap)*
+프로젝트를 누르면 맡은 부분과 결과를 볼 수 있습니다.
+
+- **[위성 수명연장 임무](projects/satellite-mission-extension-system.ko.md)** — Isaac Sim 기반 궤도 위성 포획·도킹 시뮬레이션 *(환경 세팅, 도킹 구현)* · [코드](https://github.com/mi1nn/satellite-mission-extension-system)
+- **[Overwatch AMR](projects/overwatch-amr.ko.md)** — 고정 웹캠과 TurtleBot 4가 협업하는 이동 대상 추적 *(SLAM, YOLO 학습)* · [코드](https://github.com/mi1nn/overwatch-amr)
+- **[Assembly-Cobot](projects/assembly-cobot.ko.md)** — 비전 없이 힘제어로 해결한 태양광 구조물 조립 *(PM, 시스템 아키텍처)* · [코드](https://github.com/mi1nn/assembly-cobot)
+- **[재난 구조키트 자동 구성](projects/disaster-kit-assembly.ko.md)** — 음성·비전 기반 협동로봇 키트 구성 *(비전, OctoMap)* · [코드](https://github.com/mi1nn/Project2-ROS2-VLA)
 
 ## 🛠 Tech Stacks
 

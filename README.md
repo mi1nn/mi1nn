@@ -12,10 +12,12 @@ As a field engineer at an AI healthcare startup, I installed our solution in hos
 
 ## 🚀 Projects
 
-- **[satellite-mission-extension-system](https://github.com/mi1nn/satellite-mission-extension-system)** — Orbital capture and docking simulated in Isaac Sim *(environment setup, docking)*
-- **[overwatch-amr](https://github.com/mi1nn/overwatch-amr)** — Webcam + TurtleBot 4 moving-target tracking *(SLAM, YOLO training)*
-- **[assembly-cobot](https://github.com/mi1nn/assembly-cobot)** — Vision-free, force-controlled solar structure assembly *(PM, system architecture)*
-- **[Project2-ROS2-VLA](https://github.com/mi1nn/Project2-ROS2-VLA)** — Voice-driven kit assembly robot *(vision, OctoMap)*
+Click a project for my part and results.
+
+- **[Satellite Mission Extension](projects/satellite-mission-extension-system.md)** — Orbital capture and docking simulated in Isaac Sim *(environment setup, docking)* · [Code](https://github.com/mi1nn/satellite-mission-extension-system)
+- **[Overwatch AMR](projects/overwatch-amr.md)** — Webcam + TurtleBot 4 moving-target tracking *(SLAM, YOLO training)* · [Code](https://github.com/mi1nn/overwatch-amr)
+- **[Assembly-Cobot](projects/assembly-cobot.md)** — Vision-free, force-controlled solar structure assembly *(PM, system architecture)* · [Code](https://github.com/mi1nn/assembly-cobot)
+- **[Disaster Relief Kit Assembly](projects/disaster-kit-assembly.md)** — Voice- and vision-driven kit packing with a cobot *(vision, OctoMap)* · [Code](https://github.com/mi1nn/Project2-ROS2-VLA)
 
 ## 🛠 Tech Stacks
 
