@@ -29,7 +29,7 @@
 - 보정 노드는 점별 재투영 오차, RANSAC 인라이어, leave-one-out 오차를 출력해 주행 전에 잘못된 보정을 걸러낼 수 있게 했습니다.
 
 ### 3. 추적 주행 (depth 카메라 + AMCL pose + Nav2)
-로봇 카메라에 RC카가 보이면, RC카의 map 위치를 계산해 일정 거리를 유지하며 따라갑니다.
+로봇 카메라에 RC카가 보이면, RC카의 map 위치를 계산해 일정 거리를 유지하며 따라갑니다. 로봇은 막힌 시험 공간 안에서 미리 만들어 둔 지도를 기반으로 움직입니다. AMCL이 2D 라이다로 지도 위 로봇 위치를 추정하고, 같은 라이다가 Nav2 costmap을 갱신해 추적 중 경로상의 장애물을 감지합니다.
 
 1. **영상에서 방향 계산.** bbox의 가로 위치와 OAK-D 수평 화각(69°)으로 RC카까지의 방향각을 구합니다.
 2. **depth로 거리 계산.** bbox 중심의 작은 depth 영역 중앙값으로 광축 방향 거리를 구하고, 방향각으로 보정해 실제 거리를 얻습니다.
@@ -67,4 +67,4 @@
 
 ## 기술
 
-ROS 2 Jazzy · TurtleBot 4 · SLAM · Nav2 · AMCL · OAK-D · YOLO26 · Ultralytics · Homography
+ROS 2 Jazzy · TurtleBot 4 · 2D LiDAR · Nav2 · AMCL · OAK-D · YOLO26 · Ultralytics · Homography
