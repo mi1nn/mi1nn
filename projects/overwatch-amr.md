@@ -14,14 +14,28 @@ A TurtleBot 4 that finds and follows a moving RC car with help from a fixed webc
 
 ## My role
 
-**SLAM mapping and YOLO training for the robot's OAK-D camera**
+**AMR vision, webcam homography, and depth-based chase motion**
 
 ## What I did
 
-- **Built the maps for navigation.** Created two maps with SLAM on TurtleBot 4 — one by autonomous exploration and one by manual driving (0.05 m/px) — used by AMCL and Nav2.
+### 1. AMR vision (robot's OAK-D camera)
 - **Built the dataset from the robot's own camera.** Recorded rosbags from the OAK-D, extracted one frame every 20, and labeled two classes: `car` (target) and `dummy` (look-alike to ignore).
-- **Compared six YOLO models under the same conditions.** Trained YOLOv8n/s, YOLO11n/s, and YOLO26n/s with identical settings and wrote scripts to re-validate and compare them on the same test set.
+- **Compared six YOLO models under the same conditions** (YOLOv8n/s, YOLO11n/s, YOLO26n/s) with scripts that re-validate them on the same test set, and selected YOLO26n for the robot.
 - **Diagnosed a failed training run.** YOLOv8s stopped early at epoch 21 with mAP50-95 0.50 and no `dummy` detections. I traced it to divergence in epochs 2–3 triggering early stopping before recovery; retraining with `patience=50` reproduced the divergence but recovered to 0.95.
+
+### 2. Webcam homography (pixel → map coordinates)
+- The fixed webcam only knows pixels, so I computed a homography **H** from pairs of floor points: their pixel position and their map position, taken from the robot's AMCL pose (`/amcl_pose`) or RViz.
+- The detected car is mapped through **H** using the **bottom center of its bounding box** — the point touching the floor. Using the box center would shift the position by the car's height, because the homography is only valid on the floor plane.
+- The calibration node reports per-point reprojection error, RANSAC inliers, and leave-one-out error so a bad calibration can be caught before driving.
+
+### 3. Chase motion (depth camera + AMCL pose + Nav2)
+Once the robot sees the car, it computes the car's position on the map and follows it at a fixed distance.
+
+1. **Bearing from the image.** The horizontal offset of the bounding box, together with the OAK-D's 69° horizontal field of view, gives the angle to the car.
+2. **Distance from depth.** The median of a small depth window at the box center gives the distance along the optical axis, corrected by the bearing to get the true range.
+3. **Car position on the map.** Combining bearing and range with the robot's AMCL-localized pose (`map → base_link`) gives the car's map coordinates.
+4. **Follow at 1.0 m with Nav2.** The car's position is sent as a Nav2 goal, and the robot stops once 1.0 m of path remains, so Nav2 still plans around walls. Goals are re-sent at most every 0.5 s and only when the car moves more than 0.2 m, to avoid constant re-planning.
+5. **Keep the car centered when close.** Within 1.0 m, the robot cancels the goal and rotates in place with a P-controller (gain 1.2, max 1.0 rad/s) to keep the car in the middle of the image.
 
 ## Results
 
