@@ -3,7 +3,10 @@
 **팀 프로젝트 · 두산로보틱스 ROKEY AI 부트캠프 · 2026.10**
 📂 코드: [mi1nn/overwatch-amr](https://github.com/mi1nn/overwatch-amr) · 🇺🇸 [English](overwatch-amr.md) · ← [프로필](../README.ko.md)
 
-<!-- TODO: 데모 GIF 또는 영상 링크 추가 -->
+<p align="center">
+  <img src="../assets/overwatch-amr-demo.gif" width="100%" alt="Overwatch AMR demo">
+  <br><sub>최종 시연, 4배속 · 고정 웹캠(왼쪽) · 로봇 OAK-D 카메라(가운데) · RViz 지도(오른쪽)</sub>
+</p>
 
 ## 개요
 

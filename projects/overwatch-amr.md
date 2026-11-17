@@ -3,7 +3,10 @@
 **Team project · Doosan Robotics ROKEY AI Bootcamp · Oct 2026**
 📂 Code: [mi1nn/overwatch-amr](https://github.com/mi1nn/overwatch-amr) · 🇰🇷 [한국어](overwatch-amr.ko.md) · ← [Profile](../README.md)
 
-<!-- TODO: add a demo GIF or video link here -->
+<p align="center">
+  <img src="../assets/overwatch-amr-demo.gif" width="100%" alt="Overwatch AMR demo">
+  <br><sub>Final demo, 4× speed · Fixed webcam (left) · Robot OAK-D camera (center) · RViz map (right)</sub>
+</p>
 
 ## Overview
 
