@@ -1,7 +1,7 @@
 # Assembly-Cobot — 태양광 구조물 조립 협동로봇
 
 **팀 프로젝트 (4명) · 두산로보틱스 ROKEY AI 부트캠프 · 2026.08**
-📂 코드: [mi1nn/assembly-cobot](https://github.com/mi1nn/assembly-cobot) · 🇺🇸 [English](assembly-cobot.md) · ← [프로필](../README.ko.md)
+📂 코드: [mi1nn/assembly-cobot](https://github.com/mi1nn/assembly-cobot) · 🇺🇸 [English](assembly-cobot.md) · ← [프로필](../README.md)
 
 <p align="center">
   <img src="https://github.com/mi1nn/assembly-cobot/raw/main/img/01_post.gif" width="49%" alt="기둥 삽입">

@@ -1,7 +1,7 @@
 # 음성·비전 기반 재난 구조키트 자동 구성 시스템
 
 **팀 프로젝트 (4명) · 두산로보틱스 ROKEY AI 부트캠프 · 2026.09**
-📂 코드: [mi1nn/voice-controlled-kit-assembly](https://github.com/mi1nn/voice-controlled-kit-assembly) · 🇺🇸 [English](disaster-kit-assembly.md) · ← [프로필](../README.ko.md)
+📂 코드: [mi1nn/voice-controlled-kit-assembly](https://github.com/mi1nn/voice-controlled-kit-assembly) · 🇺🇸 [English](disaster-kit-assembly.md) · ← [프로필](../README.md)
 
 <p align="center">
   <img src="https://github.com/mi1nn/voice-controlled-kit-assembly/raw/main/image/cycle.gif" width="49%" alt="키트 구성 사이클">

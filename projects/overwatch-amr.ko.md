@@ -1,7 +1,7 @@
 # Overwatch AMR — RC카 추적 로봇
 
 **팀 프로젝트 (3명) · 두산로보틱스 ROKEY AI 부트캠프 · 2026.10**
-📂 코드: [mi1nn/overwatch-amr](https://github.com/mi1nn/overwatch-amr) · 🇺🇸 [English](overwatch-amr.md) · ← [프로필](../README.ko.md)
+📂 코드: [mi1nn/overwatch-amr](https://github.com/mi1nn/overwatch-amr) · 🇺🇸 [English](overwatch-amr.md) · ← [프로필](../README.md)
 
 <p align="center">
   <img src="../assets/overwatch-amr-demo.gif" width="100%" alt="Overwatch AMR demo">

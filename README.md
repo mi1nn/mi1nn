@@ -1,23 +1,23 @@
-## 👋 Hi there!
+## 👋 안녕하세요!
 
-- Robotics engineer working with ROS 2 — cobot force control, AMR navigation, and Isaac Sim simulation
-- Mechanical engineering grad and former field engineer at an AI healthcare startup
-- Currently a teaching assistant for ROS 2 robotics at the ROKEY bootcamp
+- ROS 2로 협동로봇 힘제어, AMR 자율주행, Isaac Sim 시뮬레이션을 구현한 로봇 엔지니어입니다
+- 기계공학을 전공했고, AI 헬스케어 스타트업에서 필드 엔지니어로 일했습니다
+- 현재 ROKEY 부트캠프에서 ROS 2 로보틱스 조교로 일하고 있습니다
 
-🇰🇷 [한국어](README.ko.md)
+🇺🇸 [English](README.en.md)
 
 ## 🙋 About
 
-As a field engineer at an AI healthcare startup, I installed our solution in hospitals and kept its servers running. That showed me how deployed AI systems actually run, and where they break, in the real world. It also showed me what I wanted to do next: not support finished products, but design the part where hardware and software meet. That is why I moved into robotics.
+AI 헬스케어 스타트업에서 필드 엔지니어로 일하며 병원에 솔루션을 설치하고 그 뒤의 서버를 운영했습니다. 그 일을 하며 배포된 AI 시스템이 실제 현장에서 어떻게 돌아가고 어디서 문제가 생기는지를 배웠습니다. 동시에 다음에 하고 싶은 일도 분명해졌습니다. 완성된 제품을 지원하는 것이 아니라, **하드웨어와 소프트웨어가 만나는 지점을 직접 설계하는 일**입니다. 그래서 로보틱스로 방향을 옮겼습니다.
 
 ## 🚀 Projects
 
-Click a project for my part and results.
+프로젝트를 누르면 맡은 부분과 결과를 볼 수 있습니다.
 
-- **[Satellite Mission Extension](projects/satellite-mission-extension-system.md)** [🇰🇷 한국어](projects/satellite-mission-extension-system.ko.md) — Orbital capture and docking simulated in Isaac Sim *(environment setup, docking)* · [Code](https://github.com/mi1nn/satellite-mission-extension-system)
-- **[Overwatch AMR](projects/overwatch-amr.md)** [🇰🇷 한국어](projects/overwatch-amr.ko.md) — Webcam + TurtleBot 4 moving-target tracking *(AMR vision, homography, chase control)* · [Code](https://github.com/mi1nn/overwatch-amr)
-- **[Assembly-Cobot](projects/assembly-cobot.md)** [🇰🇷 한국어](projects/assembly-cobot.ko.md) — Vision-free, force-controlled solar structure assembly *(PM, system architecture)* · [Code](https://github.com/mi1nn/assembly-cobot)
-- **[Disaster Relief Kit Assembly](projects/disaster-kit-assembly.md)** [🇰🇷 한국어](projects/disaster-kit-assembly.ko.md) — Voice- and vision-driven kit packing with a cobot *(ROS 2 interfaces, voice & vision, OctoMap, integration)* · [Code](https://github.com/mi1nn/voice-controlled-kit-assembly)
+- **[위성 수명연장 임무](projects/satellite-mission-extension-system.ko.md)** [🇺🇸 English](projects/satellite-mission-extension-system.md) — Isaac Sim 기반 궤도 위성 포획·도킹 시뮬레이션 *(환경 세팅, 도킹 구현)* · [코드](https://github.com/mi1nn/satellite-mission-extension-system)
+- **[Overwatch AMR](projects/overwatch-amr.ko.md)** [🇺🇸 English](projects/overwatch-amr.md) — 고정 웹캠과 TurtleBot 4가 협업하는 이동 대상 추적 *(AMR 비전, 호모그래피, 추적 주행)* · [코드](https://github.com/mi1nn/overwatch-amr)
+- **[Assembly-Cobot](projects/assembly-cobot.ko.md)** [🇺🇸 English](projects/assembly-cobot.md) — 비전 없이 힘제어로 해결한 태양광 구조물 조립 *(PM, 시스템 아키텍처)* · [코드](https://github.com/mi1nn/assembly-cobot)
+- **[재난 구조키트 자동 구성](projects/disaster-kit-assembly.ko.md)** [🇺🇸 English](projects/disaster-kit-assembly.md) — 음성·비전 기반 협동로봇 키트 구성 *(ROS 2 인터페이스, 음성·비전, OctoMap, 통합)* · [코드](https://github.com/mi1nn/voice-controlled-kit-assembly)
 
 ## 🛠 Tech Stacks
 
@@ -25,12 +25,12 @@ Click a project for my part and results.
 
 ## 📚 Background
 
-- **ROKEY Bootcamp Training Center** — Teaching Assistant Intern (Nov 2026 –)
-- **Doosan Robotics ROKEY AI Bootcamp** — Completed the ROS 2 cobot and AMR development track
-- **AI healthcare startup** — CS / Field Engineer: on-site deployment, server operations, technical support
-- **K-Move Future Mobility Quality Management Program (620 hours)** — ISO 9001/14001/45001, IATF 16949, business English
-- **B.S. in Mechanical Engineering** — Dynamics, thermodynamics, fluid mechanics, solid mechanics, engineering mathematics, kinematics, numerical analysis, mechanical vibration
-- **Working Holiday, New Zealand** — Customer service in English
+- **ROKEY 부트캠프 교육센터** — 조교 인턴 (2026.11 ~)
+- **두산로보틱스 ROKEY AI 부트캠프** — ROS 2 협동로봇·AMR 개발 과정 수료
+- **AI 헬스케어 스타트업** — CS/Field Engineer: 솔루션 현장 배포, 서버 운영, 기술지원
+- **K-Move 미래 모빌리티 품질경영 과정 (620시간)** — ISO 9001/14001/45001, IATF 16949, 비즈니스 영어 회화
+- **기계공학 학사** — 4대 역학(동역학, 열역학, 유체역학, 고체역학), 공학수학, 기구학, 수치해석, 기계진동
+- **뉴질랜드 워킹홀리데이** — 영어 기반 고객 응대 경험
 
 ## 📫 Contact
 

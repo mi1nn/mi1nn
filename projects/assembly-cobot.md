@@ -1,7 +1,7 @@
 # Assembly-Cobot — Solar Panel Structure Assembly
 
 **Team project (4 people) · Doosan Robotics ROKEY AI Bootcamp · Aug 2026**
-📂 Code: [mi1nn/assembly-cobot](https://github.com/mi1nn/assembly-cobot) · 🇰🇷 [한국어](assembly-cobot.ko.md) · ← [Profile](../README.md)
+📂 Code: [mi1nn/assembly-cobot](https://github.com/mi1nn/assembly-cobot) · 🇰🇷 [한국어](assembly-cobot.ko.md) · ← [Profile](../README.en.md)
 
 <p align="center">
   <img src="https://github.com/mi1nn/assembly-cobot/raw/main/img/01_post.gif" width="49%" alt="Column insertion">

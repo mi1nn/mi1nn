@@ -1,7 +1,7 @@
 # Automated Satellite Mission Extension System
 
 **Team project (3 people) · Doosan Robotics ROKEY AI Bootcamp · Sep 2026**
-📂 Code: [mi1nn/satellite-mission-extension-system](https://github.com/mi1nn/satellite-mission-extension-system) · 🇰🇷 [한국어](satellite-mission-extension-system.ko.md) · ← [Profile](../README.md)
+📂 Code: [mi1nn/satellite-mission-extension-system](https://github.com/mi1nn/satellite-mission-extension-system) · 🇰🇷 [한국어](satellite-mission-extension-system.ko.md) · ← [Profile](../README.en.md)
 
 <p align="center">
   <img src="https://github.com/mi1nn/satellite-mission-extension-system/raw/main/docs/image/mep_%ED%9D%A1%EC%B0%A9.gif" width="49%" alt="Canadarm3 capturing the MEP">

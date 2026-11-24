@@ -1,7 +1,7 @@
 # Voice & Vision Disaster Relief Kit Assembly
 
 **Team project (4 people) · Doosan Robotics ROKEY AI Bootcamp · Sep 2026**
-📂 Code: [mi1nn/voice-controlled-kit-assembly](https://github.com/mi1nn/voice-controlled-kit-assembly) · 🇰🇷 [한국어](disaster-kit-assembly.ko.md) · ← [Profile](../README.md)
+📂 Code: [mi1nn/voice-controlled-kit-assembly](https://github.com/mi1nn/voice-controlled-kit-assembly) · 🇰🇷 [한국어](disaster-kit-assembly.ko.md) · ← [Profile](../README.en.md)
 
 <p align="center">
   <img src="https://github.com/mi1nn/voice-controlled-kit-assembly/raw/main/image/cycle.gif" width="49%" alt="Kit assembly cycle">
