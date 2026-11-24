@@ -1,14 +1,14 @@
 ## 👋 Hi there!
 
-- Robotics engineer working with ROS 2 — cobot force control, AMR navigation, and Isaac Sim simulation
-- Mechanical engineering grad and former field engineer at an AI healthcare startup
-- Currently a teaching assistant for ROS 2 robotics at the ROKEY bootcamp
+- Aspiring robotics engineer who has built cobot force control, AMR navigation, and Isaac Sim simulations with ROS 2
+- Mechanical engineering grad; former field engineer at an AI healthcare startup, installing and maintaining servers
+- Completed the SparkX ROKEY bootcamp and now working there as a ROS 2 robotics TA
 
 🇰🇷 [한국어](README.md)
 
 ## 🙋 About
 
-As a field engineer at an AI healthcare startup, I installed our solution in hospitals and kept its servers running. That showed me how deployed AI systems actually run, and where they break, in the real world. It also showed me what I wanted to do next: not support finished products, but design the part where hardware and software meet. That is why I moved into robotics.
+As a field engineer at an AI healthcare startup, I installed our solution in hospitals and kept its servers running. In the field, from product demos to everyday use, I traced and fixed the causes of problems in the AI analysis. It also showed me what I wanted to do next: not support finished products, but design the part where hardware and software meet. So I moved into robotics, where my mechanical engineering background meets software and AI.
 
 ## 🚀 Projects
 
@@ -25,9 +25,9 @@ Click a project for my part and results.
 
 ## 📚 Background
 
-- **ROKEY Bootcamp Training Center** — Teaching Assistant Intern (Nov 2026 –)
+- **SparkX ROKEY Bootcamp Training Center** — TA Intern (Nov 2026 –)
 - **Doosan Robotics ROKEY AI Bootcamp** — Completed the ROS 2 cobot and AMR development track
-- **AI healthcare startup** — CS / Field Engineer: on-site deployment, server operations, technical support
+- **AI healthcare startup** — CS / Field Engineer: on-site deployment, server operations and maintenance, technical support
 - **K-Move Future Mobility Quality Management Program (620 hours)** — ISO 9001/14001/45001, IATF 16949, business English
 - **B.S. in Mechanical Engineering** — Dynamics, thermodynamics, fluid mechanics, solid mechanics, engineering mathematics, kinematics, numerical analysis, mechanical vibration
 - **Working Holiday, New Zealand** — Customer service in English
